@@ -1,8 +1,8 @@
-const quoteContainer = document.getElementById('quote');
-const jokeEl = document.getElementById('joke');
-const jokeBtn = document.getElementById('jokeBtn');
 
-jokeBtn.addEventListener('click', fetchRandomQuote);
+const quoate = document.getElementById('quoate');
+const getBtn = document.getElementById('getBtn');
+
+getBtn.addEventListener('click', fetchRandomQuote);
 
 async function fetchRandomQuote() {
     try {
@@ -13,7 +13,7 @@ async function fetchRandomQuote() {
         const data = await response.json();
         const quote = data.data[0];
         console.log(quote);
-        jokeEl.innerHTML = `
+        quoate.innerHTML = `
             <p><strong>Quote:</strong> ${quote.quoteText}</p>
             <p><strong>Author:</strong> ${quote.quoteAuthor}</p>
             <hr>
